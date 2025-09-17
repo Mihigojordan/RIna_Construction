@@ -1,254 +1,316 @@
+import React, { useState } from "react";
+import {
+  ChevronRight,
+  Heart,
+  Star,
+  Eye,
+  Filter,
+  Search,
+  Building2,
+  MapPin,
+  Calendar,
+  Users,
+} from "lucide-react";
 import Header from "../components/Header";
-import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { ArrowRightIcon, TagIcon, StarIcon, HeartIcon, MagnifyingGlassIcon } from "@heroicons/react/16/solid";
-import productService from "../Services/Dispatch/productService";
 
-function Product() {
-  const navigate = useNavigate();
-  const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+const ArrowUpIcon = () => (
+  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+    <path
+      fillRule="evenodd"
+      d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
 
-  // Scroll to top on page load
-  useEffect(() => {
-    document.documentElement.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "start",
-    });
-  }, []);
+const ProjectCard = ({ project, isFavorite, onToggleFavorite }) => {
+  return (
+    <div className="group relative overflow-hidden rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#47B2E4] to-[#293751] opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none"></div>
 
-  // Fetch products from database
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        const productData = await productService.getAllProducts();
-        console.log('Fetched products:', productData);
-        const sortedProducts = productData.sort((a, b) => a.name.localeCompare(b.name));
-        setProducts(sortedProducts);
-        setFilteredProducts(sortedProducts);
-      } catch (err) {
-        setError(err.message || "Failed to load products");
-      } finally {
-        setLoading(false);
-      }
-    };
+      {/* Image Container */}
+      <div className="relative overflow-hidden">
+        <img
+          src={project.image}
+          alt={project.name}
+          className="w-full h-52 object-cover transform group-hover:scale-110 transition-transform duration-700"
+        />
 
-    fetchProducts();
-  }, []);
-
-  // Handle search query changes
-  useEffect(() => {
-    if (searchQuery.trim() === "") {
-      setFilteredProducts(products);
-    } else {
-      const filtered = products.filter((product) =>
-        product.name.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-      setFilteredProducts(filtered);
-    }
-  }, [searchQuery, products]);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-        <div className="text-center space-y-4">
-          <div className="relative">
-            <div className="w-16 h-16 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin mx-auto"></div>
-            <div className="w-12 h-12 border-4 border-transparent border-t-indigo-400 rounded-full animate-spin mx-auto absolute top-2 left-1/2 transform -translate-x-1/2"></div>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold text-slate-900 mb-1">Loading Products</h3>
-            <p className="text-slate-500">Please wait while we fetch your products...</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-        <div className="text-center max-w-md mx-auto p-8">
-          <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg className="w-10 h-10 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
-            </svg>
-          </div>
-          <h2 className="text-2xl font-bold text-slate-900 mb-3">Something went wrong</h2>
-          <p className="text-slate-600 mb-6">{error}</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
+        {/* Badges and Actions */}
+        <div className="absolute top-4 left-4">
+          <span
+            className={`${project.badgeColor} text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg`}
           >
-            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-            </svg>
-            Try Again
+            {project.badge}
+          </span>
+        </div>
+
+        <div className="absolute top-4 right-4 flex gap-2">
+          <button className="p-2 rounded-full bg-white/80 text-gray-600 hover:bg-[#47B2E4] hover:text-white transition-all backdrop-blur-sm">
+            <Eye size={18} />
           </button>
         </div>
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       </div>
-    );
-  }
+      {/* Content */}
+      <div className="px-4 pb-4 mt-4 ">
+        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#47B2E4] group-hover:to-[#293751] transition-all duration-300">
+          {project.name}
+        </h3>
 
-  const productCards = filteredProducts.map((product) => (
-    <div
-      key={product.id}
-      onClick={() => navigate(`/product/${product.id}`)}
-      className="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden border border-slate-200/60 hover:border-indigo-300 transform hover:-translate-y-2"
-    >
-      {/* Product Image */}
-      <div className="relative h-64 overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200">
-        <img
-          src={productService.getFileUrl(product.productImage)}
-          alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        {/* Project Details */}
+        {/* <div className="space-y-2 mb-4">
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <MapPin size={14} className="text-[#47B2E4]" />
+            <span>{project.location}</span>
+          </div>
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <Calendar size={14} className="text-[#47B2E4]" />
+            <span>{project.duration}</span>
+          </div>
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <Users size={14} className="text-[#47B2E4]" />
+            <span>{project.teamSize} Team Members</span>
+          </div>
+        </div> */}
+
+        <p className="text-gray-600 leading-relaxed mb-4 text-sm line-clamp-3">
+          {project.description}
+        </p>
+
+        <a
+          href="https://wa.me/250788495535"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-[#47B2E4] to-[#293751] text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+        >
+          <span className="mr-2 text-sm">contact for more info</span>
+          <ArrowUpIcon className="w-3 h-3 transform rotate-45 transition-transform duration-300" />
+        </a>
       </div>
-
-      {/* Product Info */}
-      <div className="p-4 space-y-3">
-        {/* Rating */}
-        <div className="flex items-center gap-2">
-          <div className="flex">
-            {[...Array(5)].map((_, i) => (
-              <StarIcon
-                key={i}
-                className={`w-4 h-4 ${
-                  i < 4 ? 'text-amber-400' : 'text-slate-300'
-                }`}
-              />
-            ))}
-          </div>
-          <span className="text-sm text-slate-600 font-medium">4.0</span>
-          <div className="w-1 h-1 bg-slate-300 rounded-full"></div>
-          <span className="text-sm text-slate-500">24 reviews</span>
-        </div>
-
-        {/* Product Name */}
-        <div>
-          <h3 className="font-bold text-slate-900 text-xl leading-tight line-clamp-2 group-hover:text-indigo-600 transition-colors min-h-[2rem]">
-            {product.name}
-          </h3>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="pt-2 space-y-3">
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              navigate(`/product/${product.id}`);
-            }}
-            className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold py-2 px-2  rounded-2xl transition-all duration-300 flex items-center justify-center gap-3 group/btn shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
-          >
-            View Details
-            <ArrowRightIcon className="w-6 h-6  transition-transform group-hover/btn:translate-x-1" />
-          </button> 
-        </div>
-      </div>
-      {/* Hover Glow Effect */}
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-    </div>
-  ));
-
-  return (
-    <div className="min-h-screen bg-slate-50">
-      <Header title="Our Products" />
-
-      <main className="py-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-8xl P-10 mx-auto">
-          {/* Hero Section */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-slate-900 mb-4">
-              Discover Amazing Products
-            </h1>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Explore our carefully curated collection of high-quality products designed to meet your needs.
-            </p>
-          </div>
-
-          {/* Search Section */}
-          <div className="mb-10">
-            <div className="max-w-lg mx-auto relative">
-              <div className="relative">
-                <MagnifyingGlassIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search products..."
-                  className="w-full pl-12 pr-4 py-3 text-slate-900 bg-white border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent shadow-sm transition-all duration-200"
-                />
-              </div>
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery("")}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              )}
-            </div>
-          </div>
-
-          {/* Results Header */}
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h2 className="text-2xl font-bold text-slate-900">
-                {searchQuery ? 'Search Results' : 'All Products'}
-              </h2>
-              <p className="text-slate-600 mt-1">
-                {filteredProducts.length} product{filteredProducts.length !== 1 ? 's' : ''} found
-              </p>
-            </div>
-          </div>
-
-          {/* Products Grid or Empty State */}
-          {filteredProducts.length === 0 ? (
-            <div className="text-center py-16">
-              <div className="w-24 h-24 bg-slate-100 rounded-md flex items-center justify-center mx-auto mb-6">
-                <svg className="w-10 h-10 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-2">
-                {searchQuery ? 'No products found' : 'No products available'}
-              </h3>
-              <p className="text-slate-600 mb-6 max-w-md mx-auto">
-                {searchQuery 
-                  ? `We couldn't find any products matching "${searchQuery}". Try adjusting your search terms.`
-                  : 'There are no products available at the moment. Please check back later.'
-                }
-              </p>
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery("")}
-                  className="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
-                >
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                  Clear Search
-                </button>
-              )}
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-              {productCards}
-            </div>
-          )}
-        </div>
-      </main>
     </div>
   );
-}
+};
 
-export default Product;
+const OurProjects = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [favorites, setFavorites] = useState(new Set());
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const projects = [
+    {
+      id: 1,
+      name: "Kigali Heights Tower",
+      category: "Commercial",
+      image:
+        "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=400&fit=crop",
+      location: "Kigali City Center",
+      duration: "24 Months",
+      teamSize: 45,
+      description:
+        "A 30-story modern commercial tower featuring state-of-the-art office spaces, retail outlets, and underground parking facilities in the heart of Kigali.",
+      badge: "Completed",
+      badgeColor: "bg-gradient-to-r from-green-500 to-green-600",
+      rating: 4.9,
+      reviews: 127,
+      icon: Building2,
+    },
+    {
+      id: 2,
+      name: "Nyarutarama Residential Complex",
+      category: "Residential",
+      image:
+        "https://images.unsplash.com/photo-1448630360428-65456885c650?w=400&h=400&fit=crop",
+      location: "Nyarutarama, Gasabo",
+      duration: "18 Months",
+      teamSize: 32,
+      description:
+        "Luxury residential complex with 120 modern apartments, community facilities, swimming pool, and beautiful landscaping.",
+      badge: "completed",
+      badgeColor: "bg-gradient-to-r from-green-500 to-green-600",
+      rating: 4.8,
+      reviews: 89,
+      icon: Building2,
+    },
+    {
+      id: 3,
+      name: "Kigali Convention Center Extension",
+      category: "Infrastructure",
+      image:
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=400&fit=crop",
+      location: "Kimihurura, Gasabo",
+      duration: "36 Months",
+      teamSize: 78,
+      description:
+        "Major extension project adding 15,000 sqm of exhibition space, conference halls, and hospitality facilities to the existing convention center.",
+      badge: "completed",
+      badgeColor: "bg-gradient-to-r from-green-500 to-green-600",
+      rating: 4.9,
+      reviews: 156,
+      icon: Building2,
+    },
+    {
+      id: 4,
+      name: "Kimisagara Bridge Project",
+      category: "Infrastructure",
+      image:
+        "https://images.unsplash.com/photo-1448630360428-65456885c650?w=400&h=400&fit=crop",
+      location: "Nyarugenge District",
+      duration: "15 Months",
+      teamSize: 28,
+      description:
+        "Construction of a modern cable-stayed bridge spanning 250 meters, connecting Kimisagara to the city center with pedestrian walkways and cycling lanes.",
+      badge: "completed",
+      badgeColor: "bg-gradient-to-r from-green-500 to-green-600",
+      rating: 4.7,
+      reviews: 203,
+      icon: Building2,
+    },
+    {
+      id: 5,
+      name: "Gisozi Industrial Park",
+      category: "Industrial",
+      image:
+        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=400&fit=crop",
+      location: "Gisozi, Gasabo",
+      duration: "30 Months",
+      teamSize: 65,
+      description:
+        "Development of a 50-hectare industrial park with manufacturing facilities, warehouses, administrative buildings, and supporting infrastructure.",
+      badge: "completed",
+      badgeColor: "bg-gradient-to-r from-green-500 to-green-600",
+      rating: 4.6,
+      reviews: 94,
+      icon: Building2,
+    },
+    {
+      id: 6,
+      name: "University of Rwanda Campus",
+      category: "Educational",
+      image:
+        "https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=400&fit=crop",
+      location: "Nyarugenge District",
+      duration: "42 Months",
+      teamSize: 85,
+      description:
+        "Construction of modern university campus including lecture halls, laboratories, library, student dormitories, and recreational facilities for 5,000 students.",
+      badge: "completed",
+      badgeColor: "bg-gradient-to-r from-green-500 to-green-600",
+      rating: 4.8,
+      reviews: 178,
+      icon: Building2,
+    },
+  ];
+
+  const categories = ["All", ...new Set(projects.map((p) => p.category))];
+
+  const filteredProjects = projects.filter((project) => {
+    const matchesCategory =
+      selectedCategory === "All" || project.category === selectedCategory;
+    const matchesSearch =
+      project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.location.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  const toggleFavorite = (projectId) => {
+    const newFavorites = new Set(favorites);
+    if (newFavorites.has(projectId)) {
+      newFavorites.delete(projectId);
+    } else {
+      newFavorites.add(projectId);
+    }
+    setFavorites(newFavorites);
+  };
+
+  return (
+    <section className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 py-4 ">
+      <Header title="Our projects " />
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Search and Filter Bar */}
+        {/* <div className="flex flex-col md:flex-row gap-4 mb-8 bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+          <div className="flex-1 relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+            <input
+              type="text"
+              placeholder="Search projects..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#47B2E4] focus:border-transparent"
+            />
+          </div>
+          <div className="flex gap-2 flex-wrap">
+            <Filter className="text-gray-500 my-auto" size={20} />
+            {categories.map(category => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-xl font-medium transition-all ${
+                  selectedCategory === category
+                    ? 'bg-gradient-to-r from-[#47B2E4] to-[#293751] text-white shadow-lg'
+                    : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div> */}
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredProjects.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              isFavorite={favorites.has(project.id)}
+              onToggleFavorite={toggleFavorite}
+            />
+          ))}
+        </div>
+
+        {/* No Results */}
+        {filteredProjects.length === 0 && (
+          <div className="text-center py-12">
+            <div className="text-gray-400 mb-4">
+              <Search size={48} className="mx-auto" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-600 mb-2">
+              No projects found
+            </h3>
+            <p className="text-gray-500">
+              Try adjusting your search or filter criteria
+            </p>
+          </div>
+        )}
+
+        {/* Call to Action */}
+        <div className="mt-16 text-center">
+          <div className="bg-gradient-to-r from-[#47B2E4] to-[#293751] rounded-2xl p-8 text-white">
+            <h3 className="text-2xl font-bold mb-4">
+              Ready to Start Your Project?
+            </h3>
+            <p className="text-lg mb-6 opacity-90">
+              Let's discuss how Rani Construction can bring your vision to life
+              with our expertise and dedication.
+            </p>
+            <a
+              href="https://wa.me/250788495535"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-3 bg-white text-[#47B2E4] font-bold rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-lg"
+            >
+              Contact Us Today
+              <ChevronRight size={20} className="ml-2" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default OurProjects;

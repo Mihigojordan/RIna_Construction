@@ -45,6 +45,7 @@ const TermsAndConditions = lazy(() => import("../views/TermsAndConditions.jsx"))
 const PrivacyPolicy = lazy(() => import("../views/PrivacyPolicy.jsx"));
 const Copyright = lazy(() => import("../views/CopyrightPage.jsx"));
 const Product = lazy(()=> import("../views/Product.jsx"))
+const Gallery = lazy(()=>import("../views/Gallery.jsx"))
 
 const Activity = lazy(() => import("../views/Activity.jsx"));
 
@@ -128,7 +129,7 @@ const BlogManagement = lazy(() => import("../views/Dispatch/dashboard/BlogManage
 const BlogViewModal = lazy(()=>import("../components/Dispatch/dashboard/blog/ViewModal.jsx"));
 const ProductManagement = lazy(()=>import("../views/Dispatch/ProductManagment.jsx"));
 const ProductViewPage = lazy(()=>import("../components/Dispatch/dashboard/product/ProductViewModal.jsx"));
-const ProductDetails =lazy(()=>import("../views/ProductDetails.jsx"));
+const ProjectViewMore =lazy(()=>import("../views/ProjectDetails.jsx"));
 
 const MessagingPhoneManagement = lazy(() => import("../views/Dispatch/dashboard/SendMessagePage.jsx"));
 const MessagingEmailManagement = lazy(() => import("../views/Dispatch/dashboard/SendEmailMessage.jsx"));
@@ -242,7 +243,7 @@ const routes = [
         ),
       },
       {
-        path: "product",
+        path: "project",
         element: (
           <SuspenseWrapper>
             <Product />
@@ -250,10 +251,19 @@ const routes = [
         ),
       },
       {
-        path: "product/:id",
+        path: "gallery",
         element: (
           <SuspenseWrapper>
-            <ProductDetails />
+            <Gallery />
+          </SuspenseWrapper>
+        ),
+      },
+
+      {
+        path: "project/:id",
+        element: (
+          <SuspenseWrapper>
+            <ProjectViewMore />
           </SuspenseWrapper>
         ),
       },

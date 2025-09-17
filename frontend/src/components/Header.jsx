@@ -4,6 +4,7 @@ import placefrombottle from "../assets/static/header.jpg";
 import { HomeIcon } from "@heroicons/react/24/solid";
 
 const Header = (props) => {
+  const imageUrl = "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=600&fit=crop"
   return (
     <div className="relative w-full h-52 sm:h-60 md:h-72 flex rounded-md mb-4">
       {/* react toastify container her */}
@@ -11,7 +12,7 @@ const Header = (props) => {
       <div
         className="absolute top-0 right-0 w-full h-full bg-cover rounded-lg  bg-no-repeat bg-center z-100"
         style={{
-          backgroundImage: `url(${placefrombottle})`,
+          backgroundImage: `url(${imageUrl})`,
           backgroundPosition: "right",
           backgroundSize: "cover",
         }}
