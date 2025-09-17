@@ -1,14 +1,8 @@
 import React, { useEffect } from "react";
-import Collaborators from "../components/index/Collaborators.jsx";
-import Blog from "../components/blog-card/Blog.jsx";
 import AboutUsImage from "../assets/static/about1.jpg"; // Replace with construction image
-import AboutUsImage1 from "../assets/images/casestudy/image1.jpg";
 import { aboutUsText, powerPatnersData } from "../staticData/data.js";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header.jsx";
-import WhyPeopleChooseUs from "../components/index/WhyPeopleChooseUs.jsx";
-import ReviewsSection from "../components/ReviewsSection.jsx";
-import MapWithRoute from "./MapView.jsx";
 
 const AboutUs = () => {
   const items = [

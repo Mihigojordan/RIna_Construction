@@ -9,87 +9,87 @@ export default function TermsAndConditions() {
   const toggleSection = (sectionId) => {
     setExpandedSection(expandedSection === sectionId ? null : sectionId);
   };
+const termsData = [
+  {
+    id: 1,
+    icon: FileText,
+    title: "Introduction and Acceptance",
+    content: "By hiring Rina Construction services or purchasing materials from us, you agree to these Terms and our Privacy Policy. If you do not agree, you must not use our services. Rina Construction may update these Terms at any time, and continued use signifies acceptance. Clients are encouraged to review the Terms regularly."
+  },
+  {
+    id: 2,
+    icon: Users,
+    title: "Eligibility",
+    content: "Clients must be at least 18 years old (or the legal age in their jurisdiction) and provide accurate, up-to-date information. Rina Construction reserves the right to verify credentials and decline service for ineligibility or violations."
+  },
+  {
+    id: 3,
+    icon: Shield,
+    title: "Account Registration and Security",
+    content: "Clients may need to create an account for service requests or online orders. You are responsible for safeguarding your login credentials and must report unauthorized use immediately. Sharing accounts is prohibited, and identity verification may be required for security and compliance."
+  },
+  {
+    id: 4,
+    icon: FileText,
+    title: "Service Description",
+    content: "Rina Construction provides professional construction services, material supply, and equipment rental. All projects are subject to agreement terms, availability, and applicable regulations. We act as the service provider and do not subcontract without prior consent."
+  },
+  {
+    id: 5,
+    icon: CreditCard,
+    title: "Payments and Fees",
+    content: "Payments for services and materials are processed securely. Prices are based on project scope, material type, and additional services. Late or failed payments may result in suspension of services. Refunds are handled according to Rina Construction’s policy."
+  },
+  {
+    id: 6,
+    icon: Users,
+    title: "Client Conduct and Responsibilities",
+    content: "Clients must provide accurate information and comply with all applicable laws. Harassment, discrimination, or unsafe requests are prohibited. Misuse of services or false information can result in termination of agreements or legal action."
+  },
+  {
+    id: 7,
+    icon: Shield,
+    title: "Privacy and Data",
+    content: "Rina Construction collects and uses client information as described in our Privacy Policy, including for project management, communication, and legal compliance. Data is protected with industry-standard measures and shared only as necessary. Clients have rights to access and correct their data."
+  },
+  {
+    id: 8,
+    icon: AlertTriangle,
+    title: "Termination and Suspension",
+    content: "Rina Construction may suspend or terminate services for violations, safety concerns, or non-payment, with or without notice. Clients may also terminate services at any time. Termination does not release obligations incurred prior to termination, and some data may be retained for legal reasons."
+  },
+  {
+    id: 9,
+    icon: AlertTriangle,
+    title: "Disclaimers and Limitation of Liability",
+    content: "Services and materials are provided \"as is\" with no implied warranties beyond what is stated in agreements. Rina Construction is not liable for indirect losses or delays, except as required by law. Clients assume certain risks when using our services."
+  },
+  {
+    id: 10,
+    icon: Shield,
+    title: "Indemnification",
+    content: "Clients agree to indemnify Rina Construction against claims, damages, or losses arising from misuse, violations, or third-party rights infringements. This obligation continues even after termination of services."
+  },
+  {
+    id: 11,
+    icon: FileText,
+    title: "Governing Law and Dispute Resolution",
+    content: "These Terms are governed by the laws of Rwanda. Disputes should first be resolved informally; if unresolved, they may go to binding arbitration or court. Clients waive rights to jury trials or class actions. Arbitration is confidential, and Rina Construction may seek legal relief to protect its rights."
+  },
+  {
+    id: 12,
+    icon: FileText,
+    title: "Changes to Terms",
+    content: "Rina Construction may update these Terms at any time, with notice provided via email or website. Continued use after changes indicates acceptance. Clients who disagree must stop using our services. Changes do not affect prior rights or obligations."
+  },
+  {
+    id: 13,
+    icon: Phone,
+    title: "Contact Information",
+    content: "For questions or feedback about these Terms, clients can contact Rina Construction via email or at our office. We provide prompt assistance and value client feedback for ongoing improvement."
+  }
+];
 
-  const termsData = [
-    {
-      id: 1,
-      icon: FileText,
-      title: "Introduction and Acceptance",
-      content: "By downloading or using the Abyride app, you agree to these Terms and the Privacy Policy. If you do not agree, you must not use the service. Abyride may update these Terms at any time, and continued use means you accept the changes. Users are encouraged to review the Terms regularly to stay informed."
-    },
-    {
-      id: 2,
-      icon: Users,
-      title: "Eligibility",
-      content: "You must be at least 18 years old (or the legal age in your jurisdiction) and provide accurate, up-to-date information. Drivers must hold valid licenses, registration, and insurance. Abyride reserves the right to verify credentials and suspend or terminate accounts for ineligibility or violations."
-    },
-    {
-      id: 3,
-      icon: Shield,
-      title: "Account Registration and Security",
-      content: "Users must create an account with accurate personal and payment information. You are responsible for safeguarding your login credentials and must report unauthorized use immediately. Sharing accounts is prohibited, and Abyride may require identity verification for security and compliance."
-    },
-    {
-      id: 4,
-      icon: FileText,
-      title: "Service Description",
-      content: "Abyride connects riders with independent drivers. All rides are subject to availability, and both drivers and riders can cancel under certain conditions. Abyride acts as a facilitator and does not operate vehicles or employ drivers directly."
-    },
-    {
-      id: 5,
-      icon: CreditCard,
-      title: "Payments and Fees",
-      content: "Payments are processed securely through the app. Fares are based on distance, time, demand, and other factors. Additional fees (like tolls or parking) may apply. Failure to pay may result in account suspension. Refunds are handled according to Abyride's policy."
-    },
-    {
-      id: 6,
-      icon: Users,
-      title: "User Conduct and Responsibilities",
-      content: "Users must behave respectfully and comply with all laws. Harassment, discrimination, or abuse is prohibited. Misuse of the service or providing false information can result in suspension or legal action."
-    },
-    {
-      id: 7,
-      icon: Shield,
-      title: "Privacy and Data",
-      content: "Abyride collects and uses personal data as described in its Privacy Policy, including for service provision, communication, and legal compliance. Data is protected with industry-standard security measures and may be shared with third parties only as required. Users have rights to access and correct their data."
-    },
-    {
-      id: 8,
-      icon: AlertTriangle,
-      title: "Termination and Suspension",
-      content: "Abyride may suspend or terminate accounts for violations, fraud, or safety concerns, with or without notice. Users can also close their accounts at any time. Termination does not release users from prior obligations, and some data may be retained for legal reasons."
-    },
-    {
-      id: 9,
-      icon: AlertTriangle,
-      title: "Disclaimers and Limitation of Liability",
-      content: "The app is provided \"as is\" without warranties. Abyride is not liable for damages, losses, or interruptions in service, except as required by law. Users assume the risks of using the service."
-    },
-    {
-      id: 10,
-      icon: Shield,
-      title: "Indemnification",
-      content: "Users agree to indemnify Abyride against claims, damages, or losses arising from misuse, violations, or third-party rights infringements. This obligation survives account termination."
-    },
-    {
-      id: 11,
-      icon: FileText,
-      title: "Governing Law and Dispute Resolution",
-      content: "The Terms are governed by the laws of your jurisdiction. Disputes should first be resolved informally; if unresolved, they may go to binding arbitration or court. Users waive rights to jury trials or class actions. Arbitration is confidential, and Abyride may seek court relief to protect its rights."
-    },
-    {
-      id: 12,
-      icon: FileText,
-      title: "Changes to Terms",
-      content: "Abyride may modify the Terms at any time, with notice provided via the app or email. Continued use after changes means acceptance. Users who disagree must stop using the service. Changes do not affect prior rights or obligations."
-    },
-    {
-      id: 13,
-      icon: Phone,
-      title: "Contact Information",
-      content: "For questions or feedback about the Terms, users can contact Abyride's support team via email or at their office. Prompt assistance is provided, and user feedback is valued for ongoing improvement."
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">

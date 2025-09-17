@@ -6,58 +6,59 @@ import Header from "../components/Header";
 const Faq = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const faqs = [
-    {
-      question: "Where can I buy a computer in Rwanda?",
-      answer:
-        "Kalinga Tech sells laptops, desktops, and gaming PCs with warranty and after-sales support. You can visit our store or order online.",
-    },
-    {
-      question: "Do you sell original PlayStation consoles?",
-      answer:
-        "Yes. We sell authentic PlayStation 4 and PlayStation 5 consoles with official accessories and a guarantee of authenticity.",
-    },
-    {
-      question: "Do your laptops and computers come with warranty?",
-      answer:
-        "Yes. All our laptops and desktops include a manufacturer warranty, plus free technical assistance from our team in Rwanda.",
-    },
-    {
-      question: "Can I pay in installments?",
-      answer:
-        "We provide flexible payment plans to make it easier for students, families, and businesses to afford high-quality computers and PlayStations.",
-    },
-    {
-      question: "Do you deliver outside Kigali?",
-      answer:
-        "Yes. We deliver to all districts in Rwanda using reliable courier partners, ensuring safe and timely delivery.",
-    },
-    {
-      question: "Do you also sell gaming accessories?",
-      answer:
-        "Absolutely. We stock PlayStation controllers, headsets, charging docks, and games, as well as computer accessories like keyboards, mice, and monitors.",
-    },
-    {
-      question: "Can I trade in my old laptop or PlayStation?",
-      answer:
-        "Yes. Kalinga Tech accepts trade-ins where you can exchange your old device for a discount on a new one, subject to evaluation.",
-    },
-    {
-      question: "Do you provide after-sales support?",
-      answer:
-        "Yes. Our technicians help with software setup, troubleshooting, upgrades, and maintenance to keep your device running smoothly.",
-    },
-    {
-      question: "Do you install software on new computers?",
-      answer:
-        "Yes. We provide installation of essential software like Microsoft Office, antivirus, and other tools at your request.",
-    },
-    {
-      question: "Which brands of computers do you sell?",
-      answer:
-        "We sell trusted brands such as HP, Dell, Lenovo, Asus, and Apple, ensuring you get genuine products at the best prices.",
-    },
-  ];
+ const faqs = [
+  {
+    question: "Where can I hire construction services in Rwanda?",
+    answer:
+      "Rina Construction provides professional construction services for residential, commercial, and industrial projects. You can contact us directly or visit our office for consultations.",
+  },
+  {
+    question: "Do you supply authentic construction materials?",
+    answer:
+      "Yes. We supply high-quality cement, steel, bricks, tiles, and other construction materials with verified quality standards and warranties where applicable.",
+  },
+  {
+    question: "Do your services come with a warranty?",
+    answer:
+      "Yes. All our construction projects include a workmanship warranty, and we provide ongoing support to ensure your project stands the test of time.",
+  },
+  {
+    question: "Can I pay in installments?",
+    answer:
+      "Yes. We offer flexible payment plans to help clients manage costs for both construction projects and materials.",
+  },
+  {
+    question: "Do you deliver materials outside Kigali?",
+    answer:
+      "Absolutely. We deliver construction materials to all districts in Rwanda safely and on time through our reliable transport network.",
+  },
+  {
+    question: "Do you also provide construction equipment rental?",
+    answer:
+      "Yes. We offer rental of tools and machinery like mixers, scaffolding, drills, and more to support your construction needs.",
+  },
+  {
+    question: "Can I trade in old construction equipment?",
+    answer:
+      "Yes. Rina Construction accepts trade-ins for certain equipment, allowing you to offset the cost of new rentals or purchases.",
+  },
+  {
+    question: "Do you provide after-project support?",
+    answer:
+      "Yes. We offer maintenance, inspections, and technical advice after project completion to ensure your building remains safe and durable.",
+  },
+  {
+    question: "Do you help with project planning and approvals?",
+    answer:
+      "Yes. Our team assists with architectural planning, obtaining necessary permits, and ensuring compliance with local regulations.",
+  },
+  {
+    question: "Which types of construction projects do you handle?",
+    answer:
+      "We handle residential buildings, commercial offices, industrial facilities, and renovation projects, delivering quality results at competitive prices.",
+  },
+];
+
 
   const handleToggle = (index) => {
     const element = document.getElementById(`faq-answer-${index}`);
@@ -76,13 +77,13 @@ const Faq = () => {
   }, []);
 
   return (
-    <div className="relative z-10 px-8 py-12">
+    <div className="relative z-10">
       <Header title="FAQ" />
       <h1 className="text-5xl font-bold mb-6 text-center p-4 ">
         Frequently Asked Questions
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-4">
         {faqs.map((faq, index) => (
           <div
             key={index}

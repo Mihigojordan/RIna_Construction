@@ -6,55 +6,56 @@ export default function PrivacyPolicy() {
     const [hoveredCard, setHoveredCard] = useState(null);
 
     const privacySections = [
-        {
-            id: 'commitment',
-            title: 'Our Privacy Commitment',
-            icon: Shield,
-            color: 'purple',
-            description: 'Abyride is committed to protecting your privacy and handling your personal information responsibly. We believe transparency is key to building trust.',
-            features: ['Complete transparency', 'No data selling', 'User control', 'Legal compliance']
-        },
-        {
-            id: 'collection',
-            title: 'What We Collect',
-            icon: Database,
-            color: 'blue',
-            description: 'We collect personal details such as your name, contact information, payment details, ride history, and location data necessary for our services.',
-            features: ['Personal information', 'Payment details', 'Location data', 'Usage patterns']
-        },
-        {
-            id: 'usage',
-            title: 'How We Use Your Data',
-            icon: Eye,
-            color: 'green',
-            description: 'Your information is used to provide and improve transportation services, process payments, ensure security, and comply with legal obligations.',
-            features: ['Service delivery', 'Payment processing', 'Security measures', 'Legal compliance']
-        },
-        {
-            id: 'security',
-            title: 'Data Protection',
-            icon: Lock,
-            color: 'red',
-            description: 'Industry-standard security measures protect your data from unauthorized access, loss, or disclosure with continuous monitoring.',
-            features: ['Encryption', '24/7 monitoring', 'Secure storage', 'Access controls']
-        },
-        {
-            id: 'sharing',
-            title: 'Data Sharing Policy',
-            icon: Share2,
-            color: 'orange',
-            description: 'We share information only when necessary for service provision or required by law. We never sell your personal data to third parties.',
-            features: ['Limited sharing', 'Service partners only', 'Legal requirements', 'No data sales']
-        },
-        {
-            id: 'rights',
-            title: 'Your Data Rights',
-            icon: UserCheck,
-            color: 'indigo',
-            description: 'You have comprehensive rights regarding your data, including access, modification, deletion, and portability options.',
-            features: ['Data access', 'Modification rights', 'Deletion options', 'Data portability']
-        }
-    ];
+  {
+    id: 'commitment',
+    title: 'Our Privacy Commitment',
+    icon: Shield,
+    color: 'purple',
+    description: 'Rina Construction is dedicated to protecting your personal and project information. We prioritize transparency and responsible handling of all client data.',
+    features: ['Complete transparency', 'No data selling', 'Client control', 'Legal compliance']
+  },
+  {
+    id: 'collection',
+    title: 'Information We Collect',
+    icon: Database,
+    color: 'blue',
+    description: 'We collect client details such as your name, contact information, project specifications, payment information, and delivery addresses necessary to provide our services.',
+    features: ['Personal information', 'Project details', 'Payment information', 'Delivery addresses']
+  },
+  {
+    id: 'usage',
+    title: 'How We Use Your Information',
+    icon: Eye,
+    color: 'green',
+    description: 'Your information is used to deliver construction services, manage orders, coordinate deliveries, and ensure compliance with legal and safety requirements.',
+    features: ['Service delivery', 'Order processing', 'Project coordination', 'Legal compliance']
+  },
+  {
+    id: 'security',
+    title: 'Data Protection',
+    icon: Lock,
+    color: 'red',
+    description: 'We implement industry-standard security practices to safeguard your data from unauthorized access, loss, or disclosure.',
+    features: ['Encryption', '24/7 monitoring', 'Secure storage', 'Access controls']
+  },
+  {
+    id: 'sharing',
+    title: 'Data Sharing Policy',
+    icon: Share2,
+    color: 'orange',
+    description: 'Client information is only shared when necessary for project execution, delivery, or as required by law. We never sell your data to third parties.',
+    features: ['Limited sharing', 'Project partners only', 'Legal requirements', 'No data sales']
+  },
+  {
+    id: 'rights',
+    title: 'Your Data Rights',
+    icon: UserCheck,
+    color: 'indigo',
+    description: 'You have full rights over your data, including access, modification, deletion, and portability related to your projects and accounts.',
+    features: ['Data access', 'Modification rights', 'Deletion options', 'Data portability']
+  }
+];
+
 
     const dataTypes = [
         { icon: UserCheck, label: 'Personal Info', items: ['Name', 'Email', 'Phone', 'Profile Photo'] },
@@ -117,7 +118,7 @@ export default function PrivacyPolicy() {
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold text-gray-900 mb-4">Data We Collect</h2>
                         <p className="text-gray-600 max-w-2xl mx-auto">
-                            Here's a detailed breakdown of the types of information we collect to provide you with the best service experience.
+                            Here&apos;s a detailed breakdown of the types of information we collect to provide you with the best service experience.
                         </p>
                     </div>
 

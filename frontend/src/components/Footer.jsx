@@ -7,10 +7,21 @@ import {
   FaTwitter,
   FaLinkedin,
   FaYoutube,
+  FaHome,
+  FaInfoCircle,
+  FaCog,
+  FaProjectDiagram,
+  FaNewspaper,
+  FaFileContract,
+  FaShieldAlt,
+  FaQuestionCircle,
+  FaLaptop,
+  FaGamepad
 } from "react-icons/fa";
 import "../assets/css/ContactUs.css";
 import Logo from "../assets/kalinga_logo.png";
 import { Phone } from "lucide-react";
+
 const Footer = () => {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -27,53 +38,49 @@ const Footer = () => {
       <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
         {/* Logo Section */}
         <div className="w-full lg:w-2/5">
-          <img src={Logo} alt="Logo" className=" object-contain w-20 -mt-10" />
-          <p className="text-white font-semibold">
-            Thank you for visiting our website! Stay connected <br /> and reach
-            out to us on social media.
-          </p>
-          <a
-            href="https://wa.me/+250786136396?text=Hi, how can I get more information on your service?"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex w-[40%] items-center mt-8  bg-[#47B2E4] text-sm text-white py-3 px-6 rounded-full"
-          >
-            <FaWhatsapp className="text-white mr-2" />
-            <span className="font-semibold">+250786136396</span>
-          </a>
+          <img src={Logo} alt="Logo" className="object-cover w-32 rounded-sm -mt-10" />
+      <p className="text-white font-semibold mt-4">
+  Thank you for visiting Rina Construction Ltd! <br />
+  Stay connected and follow us on social media for updates, project highlights, and expert tips.
+</p>
 
+       
         </div>
 
         {/* Navigation Sections */}
         <div className="w-full lg:w-3/5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Our Services */}
+          {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-xl mb-4">Our Services</h3>
+            <h3 className="font-semibold text-xl mb-4">Quick Links</h3>
             <ul className="space-y-3">
               <li>
                 <Link
-                  to="/services"
-                  className="text-gray-300 hover:text-[#47B2E4] transition"
+                  to="/"
+                  className="flex items-center text-gray-300 hover:text-[#47B2E4] transition"
                 >
-                  computer selling
+                  <FaHome className="mr-2 text-sm" />
+                  Home
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/services/playstation-devices"
-                  className="text-gray-300 hover:text-[#47B2E4] transition"
+                  to="/about"
+                  className="flex items-center text-gray-300 hover:text-[#47B2E4] transition"
                 >
-                  game accessories selling
+                  <FaInfoCircle className="mr-2 text-sm" />
+                  About
                 </Link>
               </li>
-                   {/* <li>
+              <li>
                 <Link
-                  to="/terms-and-conditions"
-                  className="text-gray-300 hover:text-[#47B2E4] transition"
+                  to="/services"
+                  className="flex items-center text-gray-300 hover:text-[#47B2E4] transition"
                 >
-                  terms and conditions
+                  <FaCog className="mr-2 text-sm" />
+                  Services
                 </Link>
-              </li> */}
+              </li>
+            
             </ul>
           </div>
 
@@ -81,76 +88,72 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-xl mb-4">Explore</h3>
             <ul className="space-y-3">
-              <li>
-                <Link
-                  to="/product"
-                  className="text-gray-300 hover:text-[#47B2E4] transition"
-                >
-                  Our Products
-                </Link>
-              </li>
+         
               <li>
                 <Link
                   to="/blog"
-                  className="text-gray-300 hover:text-[#47B2E4] transition"
+                  className="flex items-center text-gray-300 hover:text-[#47B2E4] transition"
                 >
-                  Blogs
+                  <FaNewspaper className="mr-2 text-sm" />
+                  News & Updates
                 </Link>
               </li>
-
-              <li>
+             
+           <li>
                 <Link
                   to="/faq"
-                  className="text-gray-300 hover:text-[#47B2E4] transition"
+                  className="flex items-center text-gray-300 hover:text-[#47B2E4] transition"
                 >
+                  <FaQuestionCircle className="mr-2 text-sm" />
                   FAQ
                 </Link>
               </li>
-         
+               <li>
+                <Link
+                  to="/history"
+                  className="flex items-center text-gray-300 hover:text-[#47B2E4] transition"
+                >
+                  <FaQuestionCircle className="mr-2 text-sm" />
+                  History
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Stay Connected */}
+          {/* Legal & Support */}
           <div>
-            <h3 className="font-semibold text-xl mb-4">
-              Stay Connected with Us
-            </h3>
-            <p className="text-gray-300 mb-4">
-              Stay connected with us to get the latest updates and exciting
-              news!
-            </p>
-            <div className="flex space-x-4">
+            <h3 className="font-semibold text-xl mb-4">Legal & Support</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  to="/terms-and-conditions"
+                  className="flex items-center text-gray-300 hover:text-[#47B2E4] transition"
+                >
+                  <FaFileContract className="mr-2 text-sm" />
+                  Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/privacy-policy"
+                  className="flex items-center text-gray-300 hover:text-[#47B2E4] transition"
+                >
+                  <FaShieldAlt className="mr-2 text-sm" />
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/copyright"
+                  className="flex items-center text-gray-300 hover:text-[#47B2E4] transition"
+                >
+                  <FaQuestionCircle className="mr-2 text-sm" />
+                  copyright information
+                </Link>
+              </li>
+            </ul>
 
-              {/* <Link
-                to="https://x.com/abyridellc"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-600 hover:bg-[#47B2E4] transition"
-              >
-                <FaTwitter />
-              </Link>
-              <Link
-                to="https://www.instagram.com/abyride_llc"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-600 hover:bg-[#47B2E4] transition"
-              >
-                <FaInstagram />
-              </Link>
-
-              <Link
-                to="https://www.linkedin.com/company/abyride/"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-600 hover:bg-[#47B2E4] transition"
-              >
-                <FaLinkedin />
-              </Link>
-
-              <Link
-                to="https://www.youtube.com/watch?v=kt4irtXpbWo"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-600 hover:bg-[#47B2E4] transition"
-              >
-                <FaYoutube />
-              </Link> */}
-          
-
-              
-            </div>
+        
           </div>
         </div>
       </div>
@@ -158,7 +161,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="mt-8 border-t border-gray-600 pt-6 text-center">
         <p className="text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} Kalinga tech. All rights reserved.
+          &copy; {new Date().getFullYear()} Rina Construction Ltd . All rights reserved.
         </p>
       </div>
     </footer>

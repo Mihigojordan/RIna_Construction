@@ -11,35 +11,36 @@ function History() {
   const [activeItem, setActiveItem] = useState(0);
   const [isVisible, setIsVisible] = useState({});
 
-  const items = [
-    {
-      year: "2020",
-      title: "Abyride Established",
-      subtitle: "From a startup to a vision-driven enterprise",
-      description: "Abyride began its journey as a transportation startup in 2020, aiming to revolutionize ridesharing. Our mission was to provide a reliable, safe, and convenient way for people to travel, and we quickly gained trust through our seamless services.",
-      icon: MapPin,
-      color: "from-blue-500 to-purple-600",
-      image: Image1
-    },
-    {
-      year: "2022",
-      title: "Expansion into Home Care Services",
-      subtitle: "Caring for your loved ones, always",
-      description: "In 2022, Abyride expanded into home care services, recognizing the need for trustworthy assistance at home. We launched elderly care, child care, and household cleaning solutions to ease the lives of our customers.",
-      icon: Heart,
-      color: "from-pink-500 to-rose-600",
-      image: Image2
-    },
-    {
-      year: "2023",
-      title: "Language Translation Services Launched",
-      subtitle: "Breaking barriers through communication",
-      description: "In 2023, Abyride introduced language translation services to connect people across cultures and languages. This included written and spoken translations, as well as real-time conversation assistance.",
-      icon: Globe,
-      color: "from-green-500 to-emerald-600",
-      image: Image3
-    }
-  ];
+const items = [
+  {
+    year: "2024",
+    title: "Rina Construction Founded",
+    subtitle: "Building dreams from the ground up",
+    description: "Rina Construction started in 2024 with a mission to deliver high-quality construction services in Rwanda. From residential homes to commercial buildings, we aim to transform ideas into durable, beautiful structures.",
+    icon: MapPin,
+    color: "from-blue-500 to-purple-600",
+    image: Image1
+  },
+  {
+    year: "2025",
+    title: "Launch of Material Supply Division",
+    subtitle: "Supplying trusted materials for every project",
+    description: "In 2025, Rina Construction expanded to supply high-quality construction materials including cement, steel, tiles, and bricks, ensuring clients have access to reliable products for all types of projects.",
+    icon: Heart,
+    color: "from-pink-500 to-rose-600",
+    image: Image2
+  },
+  {
+    year: "2025",
+    title: "Introduction of Equipment Rental Services",
+    subtitle: "Tools and machinery for every construction need",
+    description: "In 2026, we added construction equipment rental services, offering mixers, scaffolding, drills, and other tools to help clients complete projects efficiently and cost-effectively.",
+    icon: Globe,
+    color: "from-green-500 to-emerald-600",
+    image: Image3
+  }
+];
+
 
   useEffect(() => {
     document.documentElement.scrollIntoView({
