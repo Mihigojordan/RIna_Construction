@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-import Image from '../../assets/static/about1.jpg'; // Keep your image path
+import Image from '../../assets/static/about2.jpg'; // Keep your image path
 
 // eslint-disable-next-line react/prop-types
 const CheckIcon = ({ className }) => (
@@ -161,7 +161,7 @@ const About = () => {
       </div>
 
       {/* Image Section */}
-      <div className="md:w-1/2 lg:w-5/12 w-full p-6 h-[500px] object-cover flex-auto relative">
+      <div className="md:w-1/2 lg:w-5/12 w-full p-6 h-[600px] object-cover flex-auto relative">
         <motion.div
           className="relative w-full h-full rounded-2xl overflow-hidden group"
           variants={imageVariants}

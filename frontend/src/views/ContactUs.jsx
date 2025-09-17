@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ContactBgImg from "../assets/contact.jpg"; // Import the image
+import ContactBgImg from "../assets/conttact.jpg"; // Import the image
 import { ContactService } from "../Services/Landing/ContactService"; // Adjust the path as needed
 
 import "../assets/css/ContactUs.css";
@@ -111,8 +111,8 @@ const ContactUs = () => {
 <div
   onClick={() =>
     contactClientByEmail(
-      "kalingatechnology@gmail.com",
-      "Hello Kalinga Technology",
+      "rinacontruction@gmail.com",
+      "Hello Rina Construction",
       "I would like to get in touch with you."
     )
   }
@@ -130,7 +130,7 @@ const ContactUs = () => {
     </h3>
     <p className="font-semibold text-[16px] text-gray-400 capitalize">
       <span className="email-txt text-[14px] text-gray-400 underline">
-        kalingatechnology@gmail.com
+     rinaconstruction@gmail.com
       </span>
     </p>
   </div>
@@ -180,7 +180,7 @@ const ContactUs = () => {
         rel="noopener noreferrer"
         className="email-txt text-[14px] underline text-gray-400"
       >
-        +250 786 136 396
+        +250 788 495 535
       </a>
     </p>
   </div>

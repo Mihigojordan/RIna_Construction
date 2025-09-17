@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AdminModule } from './Modules/admin/admin.module';
 import { BlogModule } from './Modules/blog-managment/blog.module';
 import { ProductModule } from './Modules/product-management/product.module';
+import { ContactModule } from './Modules/Contact-us/contact.module';
 @Module({
   imports: [
 
@@ -14,7 +15,8 @@ import { ProductModule } from './Modules/product-management/product.module';
     CommonModule,
     AdminModule,
     BlogModule,
-    ProductModule
+    ProductModule,
+    ContactModule
   ],
   controllers: [],
 })
