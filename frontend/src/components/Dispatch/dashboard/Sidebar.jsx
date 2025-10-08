@@ -52,11 +52,11 @@ const Sidebar = () => {
       name: 'blog Management',
       icon: BarChart,
     },
-    {
-      path: '/Dispatch/dashboard/product-management',
-      name: 'product Management',
-      icon: PackageOpen,
-    },
+    // {
+    //   path: '/Dispatch/dashboard/product-management',
+    //   name: 'product Management',
+    //   icon: PackageOpen,
+    // },
  ];
 
   const renderMenuItem = (item) => {
