@@ -1,78 +1,82 @@
 import React, { Suspense, useEffect } from "react";
 import { RouterProvider } from "react-router-dom";
 import router from "./Router/index";
-import { Helmet } from "react-helmet"; // Import Helmet for SEO
+import { Helmet } from "react-helmet";
 
 import ErrorBoundary from "./Error/ErrorBoundary";
 import ReactGA from "react-ga4";
 import Loader from "./components/Loading";
-// import { AuthProvider } from './context/AuthContext';
+
 function App() {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Abyride Transportation and Home Care Service",
-    url: "https://yourdomain.com",
+    name: "RANI | Professional Civil & Construction Solutions",
+    url: "https://rani-construction.com",
     sameAs: [
-      "https://www.instagram.com/abyride_transportation/",
-      "https://github.com/abyride-transport",
-      "https://twitter.com/abyride_transport",
-      "https://www.linkedin.com/company/abyride-transport/",
+      "https://www.instagram.com/rani_construction/",
+      "https://github.com/rani-construction",
+      "https://twitter.com/rani_construction",
+      "https://www.linkedin.com/company/rani-construction/",
     ],
-    image: "./abyride-logo.jpg",
+    image: "./rani-logo.jpg",
     description:
-      "Abyride Transportation and Home Care Service provides reliable transportation and personalized care solutions. Discover our services for individuals and families.",
+      "RANI provides professional civil engineering and construction solutions across residential, commercial, and industrial projects in Rwanda and beyond. We build with quality, trust, and innovation.",
   };
+
+  useEffect(() => {
+    ReactGA.initialize("G-XXXXXXXXXX"); // Replace with your Google Analytics ID
+    ReactGA.send("pageview");
+  }, []);
 
   return (
     <ErrorBoundary>
-      {/* Adding Helmet for SEO optimization */}
       <Helmet>
-        <title>Kalinga technology</title>{" "}
-        {/* Title for SEO */}
+        <title>RANI | Professional Civil & Construction Solutions</title>
         <meta
           name="description"
-          content="Abyride Transportation and Home Care Service offers reliable transportation and compassionate home care services tailored to your needs. Explore our services and solutions."
+          content="RANI offers expert civil engineering and construction solutions for residential, commercial, and industrial developments. Building excellence across Rwanda and beyond."
         />
         <meta
           name="keywords"
-          content="Abyride, transportation services, home care, personal care, care solutions, transportation company, home health services, Abyride Transportation"
+          content="RANI, construction, civil engineering, building, architecture, infrastructure, residential, commercial, industrial projects, Rwanda construction company"
         />
-        <meta
-          name="author"
-          content="Abyride Transportation and Home Care Service"
-        />
-        {/* Open Graph metadata for social media sharing */}
+        <meta name="author" content="RANI Construction Company" />
+
+        {/* Open Graph metadata */}
         <meta
           property="og:title"
-          content="Abyride Transportation and Home Care Service"
+          content="RANI | Professional Civil & Construction Solutions"
         />
         <meta
           property="og:description"
-          content="Discover the reliable transportation and home care services offered by Abyride. Learn how we cater to the needs of individuals and families."
+          content="Explore modern construction and civil engineering services with RANI. From residential housing to large-scale infrastructure, we build trust and quality."
         />
-        <meta property="og:image" content="./abyride-logo.jpg" />{" "}
-        {/* Image for sharing */}
-        <meta property="og:url" content="https://yourdomain.com" />
+        <meta property="og:image" content="./rani-logo.jpg" />
+        <meta property="og:url" content="https://rani-construction.com" />
         <meta property="og:type" content="website" />
+
         {/* Twitter Card metadata */}
         <meta
           name="twitter:title"
-          content="Abyride Transportation and Home Care Service"
+          content="RANI | Professional Civil & Construction Solutions"
         />
         <meta
           name="twitter:description"
-          content="Explore the exceptional transportation and home care services provided by Abyride."
+          content="RANI provides reliable civil and construction services for all types of projects — residential, commercial, and infrastructure."
         />
-        <meta name="twitter:image" content="./abyride-logo.jpg" />
+        <meta name="twitter:image" content="./rani-logo.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        {/* Structured Data - JSON-LD Schema Markup for enhanced SEO */}
+
+        {/* Structured Data for SEO */}
         <script type="application/ld+json">
           {JSON.stringify(schemaMarkup)}
         </script>
+
+        {/* Google Analytics */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-F57Y947PR2"
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
         ></script>
         <script>
           {`
@@ -82,22 +86,19 @@ function App() {
             gtag('config', 'G-XXXXXXXXXX');
           `}
         </script>
-        {/* Favicon */}
-        <link rel="icon" href="./abyride-logo.jpg" />
-        {/* Additional meta tags for mobile optimization */}
+
+        {/* Favicon & Icons */}
+        <link rel="icon" href="./rani-logo.png" />
+        <link rel="apple-touch-icon" href="./rani-logo.png" />
+
+        {/* Mobile & Theme Settings */}
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        {/* Apple touch icon for iPhone */}
-        <link rel="apple-touch-icon" href="./abyride-logo.jpg" />
-        {/* Theme Color */}
-        <meta name="theme-color" content="#00aaff" />
+        <meta name="theme-color" content="#004d40" />
       </Helmet>
-
-      {/* Suspense and ErrorBoundary setup */}
-      {/* Auth context for users */}
 
       <Suspense fallback={<Loader />}>
         <RouterProvider router={router} />

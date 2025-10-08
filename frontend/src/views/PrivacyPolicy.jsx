@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
     title: 'Our Privacy Commitment',
     icon: Shield,
     color: 'purple',
-    description: 'Rina Construction is dedicated to protecting your personal and project information. We prioritize transparency and responsible handling of all client data.',
+    description: 'Rani Construction is dedicated to protecting your personal and project information. We prioritize transparency and responsible handling of all client data.',
     features: ['Complete transparency', 'No data selling', 'Client control', 'Legal compliance']
   },
   {

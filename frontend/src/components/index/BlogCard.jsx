@@ -15,6 +15,7 @@ function BlogCard() {
       try {
         setLoading(true);
         const response = await blogService.getAllBlogs();
+        console.warn(response)
         // Sort blogs by creation date (assuming createdAt field) and take the latest 3
         const sortedBlogs = response
           .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
