@@ -364,7 +364,7 @@ const Gallery = () => {
           <div className="bg-gradient-to-r from-[#47B2E4] to-[#293751] rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Want to See Your Project Here?</h3>
             <p className="text-lg mb-6 opacity-90">
-              Contact Rani Construction to discuss your next project and become part of our growing portfolio of successful developments.
+              Contact RANI Construction to discuss your next project and become part of our growing portfolio of successful developments.
             </p>
             <a
               href="https://wa.me/250788495535"
