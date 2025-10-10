@@ -99,7 +99,7 @@ const About = () => {
           className="font-bold text-2xl md:text-4xl -mb-2 bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent"
           variants={itemVariants}
         >
-          About RANI Construction Ltd
+          About RANI CONSTRUCTION LTD
         </motion.h1>
 
         {/* Description */}
@@ -113,7 +113,7 @@ const About = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 2 }}
           >
-            Welcome to RANI Construction, your trusted civil engineering partner. We specialize
+            Welcome to RANI CONSTRUCTION LTD, your trusted civil engineering partner. We specialize
             in designing and planning residential and commercial buildings, while also
             offering expert construction management services for all kinds of structural projects.
             Our mission is to provide top-notch engineering solutions and professional support

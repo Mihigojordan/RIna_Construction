@@ -40,7 +40,7 @@ const Footer = () => {
         <div className="w-full lg:w-2/5">
           <img src={Logo} alt="Logo" className="object-cover w-32 rounded-sm -mt-10" />
       <p className="text-white font-semibold mt-4">
-  Thank you for visiting RANI Construction Ltd! <br />
+  Thank you for visiting RANI CONSTRUCTION LTD! <br />
   Stay connected and follow us on social media for updates, project highlights, and expert tips.
 </p>
 
@@ -161,7 +161,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="mt-8 border-t border-gray-600 pt-6 text-center">
         <p className="text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} RANI Construction Ltd . All rights reserved.
+          &copy; {new Date().getFullYear()} RANI CONSTRUCTION LTD . All rights reserved.
         </p>
       </div>
     </footer>

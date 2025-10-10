@@ -69,7 +69,7 @@ const ServiceCard = ({ SvgIcon, num, Img, title, par }) => {
           rel="noopener noreferrer"
           className="flex items-center justify-center w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-[#47B2E4] to-[#293751] text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
         >
-          <span className="mr-2 text-sm">Contact RANI Construction</span>
+          <span className="mr-2 text-sm">Contact RANI CONSTRUCTION LTD</span>
           <ArrowUpIcon className="w-3 h-3 transform rotate-45 transition-transform duration-300" />
         </a>
       </div>
@@ -126,7 +126,7 @@ const Services = () => {
             Professional Civil & Construction Solutions
           </h3>
           <p className="text-gray-600 max-w-2xl -mb-6 mx-auto text-lg leading-relaxed">
-            From planning to execution, RANI Construction Co. Ltd provides trusted solutions in construction, engineering, and project management.
+            From planning to execution, RANI CONSTRUCTION LTD provides trusted solutions in construction, engineering, and project management.
           </p>
         </motion.div>
 

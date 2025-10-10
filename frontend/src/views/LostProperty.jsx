@@ -420,9 +420,7 @@ const LostPropertyModal = ({ isOpen, onClose, onSubmit }) => {
                             {/* Booking Confirmation */}
                             <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <Check className="w-4 h-
-
-4 text-green-600" />
+                                    <Check className="w-4 h-4 text-green-600" />
                                     <span className="font-medium text-green-900">Booking Verified</span>
                                 </div>
                                 <div className="text-sm text-green-800 space-y-1">

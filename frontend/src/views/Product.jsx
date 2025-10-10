@@ -294,7 +294,7 @@ const OurProjects = () => {
               Ready to Start Your Project?
             </h3>
             <p className="text-lg mb-6 opacity-90">
-              Let's discuss how RANI Construction can bring your vision to life
+              Let's discuss how RANI CONSTRUCTION LTD can bring your vision to life
               with our expertise and dedication.
             </p>
             <a

@@ -119,7 +119,7 @@ const Service = () => {
           rel="noopener noreferrer"
           className="flex items-center justify-center w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-[#47B2E4] to-[#293751] text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
         >
-          <span className="mr-2 text-sm">Contact RANI Construction</span>
+          <span className="mr-2 text-sm">Contact RANI CONSTRUCTION LTD</span>
           <ArrowUpIcon className="w-3 h-3 transform rotate-45 transition-transform duration-300" />
         </a>
                 </div>
