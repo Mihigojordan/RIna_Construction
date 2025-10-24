@@ -1,4 +1,6 @@
-import React, { Suspense } from "react";
+/* eslint-disable no-undef */
+import React, { useEffect,Suspense } from "react";
+
 import { RouterProvider } from "react-router-dom";
 import router from "./Router/index";
 import { Helmet } from "react-helmet";
@@ -23,10 +25,7 @@ function App() {
       "RANI provides professional civil engineering and construction solutions across residential, commercial, and industrial projects in Rwanda and beyond. We build with quality, trust, and innovation.",
   };
 
-  useEffect(() => {
-    ReactGA.initialize("G-XXXXXXXXXX"); // Replace with your Google Analytics ID
-    ReactGA.send("pageview");
-  }, []);
+
 
   return (
     <ErrorBoundary>
