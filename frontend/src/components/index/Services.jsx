@@ -126,7 +126,7 @@ const Services = () => {
             Professional Civil & Construction Solutions
           </h3>
           <p className="text-gray-600 max-w-2xl -mb-6 mx-auto text-lg leading-relaxed">
-            From planning to execution, RANI CONSTRUCTION LTD provides trusted solutions in construction, engineering, and project management.
+            From planning to execution, RANI CONSTRUCTION COMPANY LTD provides trusted solutions in construction, engineering, and project management.
           </p>
         </motion.div>
 
