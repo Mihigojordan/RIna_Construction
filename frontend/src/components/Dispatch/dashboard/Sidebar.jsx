@@ -52,11 +52,11 @@ const Sidebar = () => {
       name: 'blog Management',
       icon: BarChart,
     },
-    {
-      path: '/Dispatch/dashboard/product-management',
-      name: 'product Management',
-      icon: PackageOpen,
-    },
+    // {
+    //   path: '/Dispatch/dashboard/product-management',
+    //   name: 'product Management',
+    //   icon: PackageOpen,
+    // },
  ];
 
   const renderMenuItem = (item) => {
@@ -177,7 +177,7 @@ const Sidebar = () => {
       {/* Logo/Title Section */}
       <div className="mb-6 flex justify-center">
         <h1 className="text-xl md:text-xl uppercase font-bold bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent text-center">
-          kalinga dashboard
+    Rina Construction
         </h1>
       </div>
 

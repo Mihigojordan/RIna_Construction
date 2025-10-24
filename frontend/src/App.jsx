@@ -1,75 +1,70 @@
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense } from "react";
 import { RouterProvider } from "react-router-dom";
 import router from "./Router/index";
 import { Helmet } from "react-helmet"; // Import Helmet for SEO
 
 import ErrorBoundary from "./Error/ErrorBoundary";
-import ReactGA from "react-ga4";
 import Loader from "./components/Loading";
 // import { AuthProvider } from './context/AuthContext';
+
 function App() {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Abyride Transportation and Home Care Service",
+    name: "Rina Contraction Ltd",
     url: "https://yourdomain.com",
     sameAs: [
-      "https://www.instagram.com/abyride_transportation/",
-      "https://github.com/abyride-transport",
-      "https://twitter.com/abyride_transport",
-      "https://www.linkedin.com/company/abyride-transport/",
+      "https://www.instagram.com/rinacontraction/",
+      "https://github.com/rinacontraction",
+      "https://twitter.com/rinacontraction",
+      "https://www.linkedin.com/company/rinacontraction/",
     ],
-    image: "./abyride-logo.jpg",
+    image: "./rina-logo.jpg",
     description:
-      "Abyride Transportation and Home Care Service provides reliable transportation and personalized care solutions. Discover our services for individuals and families.",
+      "Rina Contraction Ltd provides expert construction, renovation, and engineering solutions. We deliver quality services for residential, commercial, and industrial projects.",
   };
 
   return (
     <ErrorBoundary>
       {/* Adding Helmet for SEO optimization */}
       <Helmet>
-        <title>Kalinga technology</title>{" "}
+        <title>Rina Contraction Ltd</title>
         {/* Title for SEO */}
         <meta
           name="description"
-          content="Abyride Transportation and Home Care Service offers reliable transportation and compassionate home care services tailored to your needs. Explore our services and solutions."
+          content="Rina Contraction Ltd specializes in construction, renovation, and engineering solutions. Delivering excellence in building and infrastructure projects."
         />
         <meta
           name="keywords"
-          content="Abyride, transportation services, home care, personal care, care solutions, transportation company, home health services, Abyride Transportation"
+          content="Rina Contraction Ltd, construction services, renovation, engineering, building projects, residential construction, commercial construction, infrastructure development"
         />
-        <meta
-          name="author"
-          content="Abyride Transportation and Home Care Service"
-        />
+        <meta name="author" content="Rina Contraction Ltd" />
+
         {/* Open Graph metadata for social media sharing */}
-        <meta
-          property="og:title"
-          content="Abyride Transportation and Home Care Service"
-        />
+        <meta property="og:title" content="Rina Contraction Ltd" />
         <meta
           property="og:description"
-          content="Discover the reliable transportation and home care services offered by Abyride. Learn how we cater to the needs of individuals and families."
+          content="Discover top-notch construction and renovation services with Rina Contraction Ltd. Building excellence for homes, businesses, and industries."
         />
-        <meta property="og:image" content="./abyride-logo.jpg" />{" "}
-        {/* Image for sharing */}
+        <meta property="og:image" content="./rina-logo.jpg" />
         <meta property="og:url" content="https://yourdomain.com" />
         <meta property="og:type" content="website" />
+
         {/* Twitter Card metadata */}
-        <meta
-          name="twitter:title"
-          content="Abyride Transportation and Home Care Service"
-        />
+        <meta name="twitter:title" content="Rina Contraction Ltd" />
         <meta
           name="twitter:description"
-          content="Explore the exceptional transportation and home care services provided by Abyride."
+          content="Trusted construction, renovation, and engineering services by Rina Contraction Ltd."
         />
-        <meta name="twitter:image" content="./abyride-logo.jpg" />
+        <meta name="twitter:image" content="./rina-logo.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
+
         {/* Structured Data - JSON-LD Schema Markup for enhanced SEO */}
         <script type="application/ld+json">
           {JSON.stringify(schemaMarkup)}
         </script>
+
+        {/* Google Analytics */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-F57Y947PR2"
@@ -82,23 +77,25 @@ function App() {
             gtag('config', 'G-XXXXXXXXXX');
           `}
         </script>
+
         {/* Favicon */}
-        <link rel="icon" href="./abyride-logo.jpg" />
+        <link rel="icon" href="./rina-logo.jpg" />
+
         {/* Additional meta tags for mobile optimization */}
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+
         {/* Apple touch icon for iPhone */}
-        <link rel="apple-touch-icon" href="./abyride-logo.jpg" />
+        <link rel="apple-touch-icon" href="./rina-logo.jpg" />
+
         {/* Theme Color */}
-        <meta name="theme-color" content="#00aaff" />
+        <meta name="theme-color" content="#0044cc" />
       </Helmet>
 
       {/* Suspense and ErrorBoundary setup */}
-      {/* Auth context for users */}
-
       <Suspense fallback={<Loader />}>
         <RouterProvider router={router} />
       </Suspense>

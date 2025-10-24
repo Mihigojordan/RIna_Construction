@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import adminServiceInstance from '../../Services/Dispatch/Auth';
 import { useNavigate } from 'react-router-dom';
-import Logo from '../../assets/images/kalinga_logo.png'
+import Logo from '../../assets/kalinga_logo.png'
 import Swal from 'sweetalert2';
 
 
@@ -139,11 +139,11 @@ export default function Login() {
         {/* Logo and Header */}
         <div className="text-center mb-4 relative z-10">
            
-           <img src={Logo} className='w-[25%] h-[25%] text-center m-auto' alt="" />
+           <img src={Logo} className='w-[50%] h-[35%] text-center m-auto' alt="" />
        
-          <p className="text-gray-600">
+          {/* <p className="text-gray-600">
             Sign in to access the admin dashboard
-          </p>
+          </p> */}
         </div>
    
         {/* Email/Password Form */}
