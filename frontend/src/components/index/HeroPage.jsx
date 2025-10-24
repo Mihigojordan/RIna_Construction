@@ -75,7 +75,7 @@ const HeroPage = () => {
                   {/* Brand Badge */}
                   <div className="inline-flex items-center gap-2 mb-6 p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/20">
                     <span className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold text-sm">
-                      Rani Construction Co. Ltd
+                      RANI CONSTRUCTION LTD
                     </span>
                     <span className="text-white font-medium uppercase tracking-wide text-sm">
                       Building Trust. Creating Value.

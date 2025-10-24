@@ -1,65 +1,73 @@
 import React, { Suspense } from "react";
 import { RouterProvider } from "react-router-dom";
 import router from "./Router/index";
-import { Helmet } from "react-helmet"; // Import Helmet for SEO
+import { Helmet } from "react-helmet";
 
 import ErrorBoundary from "./Error/ErrorBoundary";
 import Loader from "./components/Loading";
-// import { AuthProvider } from './context/AuthContext';
 
 function App() {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Rina Contraction Ltd",
-    url: "https://yourdomain.com",
+    name: "RANI | Professional Civil & Construction Solutions",
+    url: "https://rani-construction.com",
     sameAs: [
-      "https://www.instagram.com/rinacontraction/",
-      "https://github.com/rinacontraction",
-      "https://twitter.com/rinacontraction",
-      "https://www.linkedin.com/company/rinacontraction/",
+      "https://www.instagram.com/rani_construction/",
+      "https://github.com/rani-construction",
+      "https://twitter.com/rani_construction",
+      "https://www.linkedin.com/company/rani-construction/",
     ],
-    image: "./rina-logo.jpg",
+    image: "./rani-logo.jpg",
     description:
-      "Rina Contraction Ltd provides expert construction, renovation, and engineering solutions. We deliver quality services for residential, commercial, and industrial projects.",
+      "RANI provides professional civil engineering and construction solutions across residential, commercial, and industrial projects in Rwanda and beyond. We build with quality, trust, and innovation.",
   };
+
+  useEffect(() => {
+    ReactGA.initialize("G-XXXXXXXXXX"); // Replace with your Google Analytics ID
+    ReactGA.send("pageview");
+  }, []);
 
   return (
     <ErrorBoundary>
-      {/* Adding Helmet for SEO optimization */}
       <Helmet>
-        <title>Rina Contraction Ltd</title>
-        {/* Title for SEO */}
+        <title>RANI | Professional Civil & Construction Solutions</title>
         <meta
           name="description"
-          content="Rina Contraction Ltd specializes in construction, renovation, and engineering solutions. Delivering excellence in building and infrastructure projects."
+          content="RANI offers expert civil engineering and construction solutions for residential, commercial, and industrial developments. Building excellence across Rwanda and beyond."
         />
         <meta
           name="keywords"
-          content="Rina Contraction Ltd, construction services, renovation, engineering, building projects, residential construction, commercial construction, infrastructure development"
+          content="RANI, construction, civil engineering, building, architecture, infrastructure, residential, commercial, industrial projects, Rwanda construction company"
         />
-        <meta name="author" content="Rina Contraction Ltd" />
+        <meta name="author" content="RANI Construction Company" />
 
-        {/* Open Graph metadata for social media sharing */}
-        <meta property="og:title" content="Rina Contraction Ltd" />
+        {/* Open Graph metadata */}
+        <meta
+          property="og:title"
+          content="RANI | Professional Civil & Construction Solutions"
+        />
         <meta
           property="og:description"
-          content="Discover top-notch construction and renovation services with Rina Contraction Ltd. Building excellence for homes, businesses, and industries."
+          content="Explore modern construction and civil engineering services with RANI. From residential housing to large-scale infrastructure, we build trust and quality."
         />
-        <meta property="og:image" content="./rina-logo.jpg" />
-        <meta property="og:url" content="https://yourdomain.com" />
+        <meta property="og:image" content="./rani-logo.jpg" />
+        <meta property="og:url" content="https://rani-construction.com" />
         <meta property="og:type" content="website" />
 
         {/* Twitter Card metadata */}
-        <meta name="twitter:title" content="Rina Contraction Ltd" />
+        <meta
+          name="twitter:title"
+          content="RANI | Professional Civil & Construction Solutions"
+        />
         <meta
           name="twitter:description"
-          content="Trusted construction, renovation, and engineering services by Rina Contraction Ltd."
+          content="RANI provides reliable civil and construction services for all types of projects — residential, commercial, and infrastructure."
         />
-        <meta name="twitter:image" content="./rina-logo.jpg" />
+        <meta name="twitter:image" content="./rani-logo.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
 
-        {/* Structured Data - JSON-LD Schema Markup for enhanced SEO */}
+        {/* Structured Data for SEO */}
         <script type="application/ld+json">
           {JSON.stringify(schemaMarkup)}
         </script>
@@ -67,7 +75,7 @@ function App() {
         {/* Google Analytics */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-F57Y947PR2"
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
         ></script>
         <script>
           {`
@@ -78,24 +86,19 @@ function App() {
           `}
         </script>
 
-        {/* Favicon */}
-        <link rel="icon" href="./rina-logo.jpg" />
+        {/* Favicon & Icons */}
+        <link rel="icon" href="./rani-logo.png" />
+        <link rel="apple-touch-icon" href="./rani-logo.png" />
 
-        {/* Additional meta tags for mobile optimization */}
+        {/* Mobile & Theme Settings */}
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-
-        {/* Apple touch icon for iPhone */}
-        <link rel="apple-touch-icon" href="./rina-logo.jpg" />
-
-        {/* Theme Color */}
-        <meta name="theme-color" content="#0044cc" />
+        <meta name="theme-color" content="#004d40" />
       </Helmet>
 
-      {/* Suspense and ErrorBoundary setup */}
       <Suspense fallback={<Loader />}>
         <RouterProvider router={router} />
       </Suspense>

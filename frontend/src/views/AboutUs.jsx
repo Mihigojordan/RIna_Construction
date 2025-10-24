@@ -76,13 +76,13 @@ const AboutUs = () => {
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in-up" style={{animationDelay: '0.1s'}}>
                 <span className="bg-gradient-to-r from-gray-900 via-primary-900 to-primary-900 bg-clip-text text-transparent">
-                  {aboutUsText.headerTitle || "RIna Construction Ltd"}
+                  {aboutUsText.headerTitle || "Rani Construction Ltd"}
                 </span>
               </h1>
 
               <div className="space-y-6 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  At <span className="font-semibold text-primary-600">RIna Construction Ltd</span>, we specialize in providing top-notch construction services for residential, commercial, and industrial projects. Our mission is to deliver quality, reliability, and innovation in every building we create.
+                  At <span className="font-semibold text-primary-600">RANI CONSTRUCTION LTD</span>, we specialize in providing top-notch construction services for residential, commercial, and industrial projects. Our mission is to deliver quality, reliability, and innovation in every building we create.
                 </p>
               </div>
 

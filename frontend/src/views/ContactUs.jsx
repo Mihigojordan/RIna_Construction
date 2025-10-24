@@ -111,8 +111,8 @@ const ContactUs = () => {
 <div
   onClick={() =>
     contactClientByEmail(
-      "rinacontruction@gmail.com",
-      "Hello Rina Construction",
+      "Ranicontruction@gmail.com",
+      "Hello Rani Construction",
       "I would like to get in touch with you."
     )
   }
@@ -130,7 +130,7 @@ const ContactUs = () => {
     </h3>
     <p className="font-semibold text-[16px] text-gray-400 capitalize">
       <span className="email-txt text-[14px] text-gray-400 underline">
-     rinaconstruction@gmail.com
+     Raniconstruction@gmail.com
       </span>
     </p>
   </div>

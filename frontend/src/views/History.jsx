@@ -14,9 +14,9 @@ function History() {
 const items = [
   {
     year: "2024",
-    title: "Rina Construction Founded",
+    title: "Rani Construction Founded",
     subtitle: "Building dreams from the ground up",
-    description: "Rina Construction started in 2024 with a mission to deliver high-quality construction services in Rwanda. From residential homes to commercial buildings, we aim to transform ideas into durable, beautiful structures.",
+    description: "Rani Construction started in 2024 with a mission to deliver high-quality construction services in Rwanda. From residential homes to commercial buildings, we aim to transform ideas into durable, beautiful structures.",
     icon: MapPin,
     color: "from-blue-500 to-purple-600",
     image: Image1
@@ -25,7 +25,7 @@ const items = [
     year: "2025",
     title: "Launch of Material Supply Division",
     subtitle: "Supplying trusted materials for every project",
-    description: "In 2025, Rina Construction expanded to supply high-quality construction materials including cement, steel, tiles, and bricks, ensuring clients have access to reliable products for all types of projects.",
+    description: "In 2025, Rani Construction expanded to supply high-quality construction materials including cement, steel, tiles, and bricks, ensuring clients have access to reliable products for all types of projects.",
     icon: Heart,
     color: "from-pink-500 to-rose-600",
     image: Image2

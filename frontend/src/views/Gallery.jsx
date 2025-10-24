@@ -101,7 +101,7 @@ const Gallery = () => {
       id: 4,
       title: "Modern Bridge Engineering",
       category: "Infrastructure",
-      url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
+      url: "https://images.unsplash.com/photo-1559752096-250fc17d963d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzZ8fGhvdXNlJTIwcndhbmRhfGVufDB8fDB8fHww",
       location: "Nyarugenge District",
       date: "December 2023",
       description: "Cable-stayed bridge construction showcasing advanced engineering techniques.",
@@ -113,7 +113,7 @@ const Gallery = () => {
       id: 5,
       title: "Industrial Manufacturing Facility",
       category: "Industrial",
-      url: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=600&fit=crop",
+      url: "https://images.unsplash.com/photo-1738104259263-15c3190ffcb2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNvbnN0cnVjdGlvbiUyMGhvdXNlcyUyMGFjdGl2aXRpZXN8ZW58MHx8MHx8fDA%3D",
       location: "Gisozi, Gasabo",
       date: "November 2023",
       description: "Large-scale industrial park with modern manufacturing facilities and warehouses.",
@@ -149,7 +149,7 @@ const Gallery = () => {
       id: 8,
       title: "Heavy Construction Machinery",
       category: "Equipment",
-      url: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=800&h=600&fit=crop",
+      url: "https://images.unsplash.com/photo-1504202302068-15fc2055f7f9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGNvbnN0cnVjdGlvbiUyMGhvdXNlcyUyMGFjdGl2aXRpZXN8ZW58MHx8MHx8fDA%3D",
       location: "Construction Sites",
       date: "August 2023",
       description: "Advanced construction equipment for large-scale project operations.",
@@ -173,7 +173,7 @@ const Gallery = () => {
       id: 10,
       title: "Concrete Foundation Work",
       category: "Infrastructure",
-      url: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=600&fit=crop",
+      url: "https://images.unsplash.com/photo-1743130940757-42d780087c3a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvbnN0cnVjdHV0aW9uJTIwY29uY3JldGUlMjBmb3VuZGF0aW9uJTIwd29ya3xlbnwwfDB8MHx8fDI%3D",
       location: "Multiple Sites",
       date: "June 2023",
       description: "Foundation construction demonstrating structural engineering excellence.",
@@ -221,7 +221,7 @@ const Gallery = () => {
       id: 14,
       title: "Excavation and Earthwork",
       category: "Equipment",
-      url: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop",
+      url: "https://images.unsplash.com/photo-1712756232178-7a394ab242e6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAzfHxob3VzZSUyMHJ3YW5kYXxlbnwwfHwwfHx8MA%3D%3D",
       location: "Project Sites",
       date: "February 2023",
       description: "Heavy machinery performing excavation work for foundation preparation.",
@@ -234,6 +234,18 @@ const Gallery = () => {
       title: "Completed Building Facade",
       category: "Commercial",
       url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop",
+      location: "Downtown Kigali",
+      date: "January 2023",
+      description: "Completed commercial building showcasing modern facade design and urban architecture.",
+      views: 1567,
+      likes: 234,
+      height: 'h-112'
+    },
+    {
+      id: 16,
+      title: "Completed Building Facade",
+      category: "Commercial",
+      url: "https://images.unsplash.com/photo-1663058480259-2213d39f4f90?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29uc3RydWN0aW9uJTIwYWN0aXZpdGllc3xlbnwwfHwwfHx8MA%3D%3D",
       location: "Downtown Kigali",
       date: "January 2023",
       description: "Completed commercial building showcasing modern facade design and urban architecture.",
@@ -352,7 +364,7 @@ const Gallery = () => {
           <div className="bg-gradient-to-r from-[#47B2E4] to-[#293751] rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Want to See Your Project Here?</h3>
             <p className="text-lg mb-6 opacity-90">
-              Contact Rani Construction to discuss your next project and become part of our growing portfolio of successful developments.
+              Contact RANI CONSTRUCTION LTD to discuss your next project and become part of our growing portfolio of successful developments.
             </p>
             <a
               href="https://wa.me/250788495535"
